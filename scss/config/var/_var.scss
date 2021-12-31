@@ -1,0 +1,22 @@
+// color
+:root {
+  --color-PrimariColorVeryDarkDesaturatedBlue: #1d1e35;
+  --color-PrimariColorSoftRed: #f47c57;
+  --color-NeutralTextVeryDarkGrayishBlue: #4a4b5e;
+  --color-NeutralTextDarkGrayishBlue: #787887;
+  --color-DividersLightGrayishBlue: #e7e7e9;
+  --color-BackgroundGradientSoftViolet: #af67e9;
+  --color-BackgroundGradientSoftBlue: #6565e7;
+}
+$VeryDarkDesaturatedBlue: var(
+  --color-PrimariColorVeryDarkDesaturatedBlue
+);
+$ColorSoftRed: var(--color-PrimariColorSoftRed);
+$VeryDarkGrayishBlue: var(--color-NeutralTextVeryDarkGrayishBlue);
+$DarkGrayishBlue: var(--color-NeutralTextDarkGrayishBlue);
+$LightGrayishBlue: var(--color-DividersLightGrayishBlue);
+$SoftViolet: var(--color-BackgroundGradientSoftViolet);
+$SoftBlue: var(--color-BackgroundGradientSoftBlue);
+// fontweight
+$fw-4: 400;
+$fw-7: 700;

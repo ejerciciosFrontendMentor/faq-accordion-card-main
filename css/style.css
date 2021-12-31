@@ -1,0 +1,231 @@
+:root {
+  --color-PrimariColorVeryDarkDesaturatedBlue: #1d1e35;
+  --color-PrimariColorSoftRed: #f47c57;
+  --color-NeutralTextVeryDarkGrayishBlue: #4a4b5e;
+  --color-NeutralTextDarkGrayishBlue: #787887;
+  --color-DividersLightGrayishBlue: #e7e7e9;
+  --color-BackgroundGradientSoftViolet: #af67e9;
+  --color-BackgroundGradientSoftBlue: #6565e7;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 2560px) {
+  html {
+    font-size: 28px;
+  }
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  margin: 0;
+  padding-bottom: 3rem;
+  position: relative;
+  font-family: "Kumbh Sans", sans-serif;
+  background-color: var(--color-BackgroundGradientSoftBlue);
+  background-image: linear-gradient(var(--color-BackgroundGradientSoftViolet), var(--color-BackgroundGradientSoftBlue));
+  background-repeat: no-repeat;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding-top: 8.75rem;
+}
+
+.contentCar {
+  width: 20rem;
+  height: auto;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  border-radius: 1.25rem;
+  box-shadow: 0px 0.3125rem 0.625rem #000;
+}
+@media screen and (min-width: 1440px) {
+  .contentCar {
+    width: 750px;
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    padding: 50px;
+  }
+}
+
+.cImg {
+  width: 100%;
+  height: 6.25rem;
+  position: relative;
+}
+@media screen and (min-width: 1440px) {
+  .cImg {
+    width: 100%;
+    height: 300px;
+  }
+}
+.cImg__img {
+  width: 15.625rem;
+  height: 12.5rem;
+  background-image: url("../images/illustration-woman-online-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 50%;
+  top: -7.5rem;
+  transform: translateX(-50%);
+}
+.cImg__img::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 6.5rem;
+  background-image: url("../images/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: -1.25rem;
+}
+@media screen and (min-width: 1440px) {
+  .cImg__img {
+    width: 24.375rem;
+    height: 18.75rem;
+    background-image: url("../images/illustration-woman-online-desktop.svg");
+    background-size: contain;
+    left: -7.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .cImg__img::before {
+    width: 24.375rem;
+    height: 25rem;
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-size: contain;
+    bottom: -3.125rem;
+  }
+}
+
+.conAccor {
+  width: 20rem;
+  height: auto;
+}
+.conAccor__title {
+  margin-top: 10px;
+  font-size: 2rem;
+  text-align: center;
+}
+@media screen and (min-width: 1440px) {
+  .conAccor__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 20px;
+  }
+}
+.conAccor__contentAccordeon {
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+}
+@media screen and (min-width: 1440px) {
+  .conAccor__contentAccordeon {
+    padding-bottom: 0;
+  }
+}
+
+.accordeon {
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  border-bottom: 0.0625rem solid var(--color-DividersLightGrayishBlue);
+  position: relative;
+}
+.accordeon::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  left: 0;
+  top: 0;
+}
+@media (hover: hover) {
+  .accordeon:hover .accordeon__title {
+    color: var(--color-PrimariColorSoftRed);
+  }
+}
+.accordeon__title {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.accordeon__title::before {
+  content: "";
+  position: absolute;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  background-image: url(../images/icon-arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+.accordeon__title--show {
+  font-weight: 700;
+}
+.accordeon__title--show::before {
+  transform: translateY(-50%) rotate(180deg);
+  transition: transform 0.3s;
+}
+.accordeon__cotentText {
+  overflow: hidden;
+  height: 0;
+  transform: translateY(-10%);
+  transition: transform 0.4s, opacity 0.3s;
+}
+.accordeon__cotentText--show {
+  height: 100%;
+  transform: translateY(0);
+}
+.accordeon__text {
+  color: var(--color-NeutralTextVeryDarkGrayishBlue);
+  font-size: 0.8rem;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* footer */
+.footerFronter {
+  padding: 0.3125rem;
+  position: absolute;
+  bottom: 0;
+  font-family: sans-serif;
+}
+.footerFronter__attribution {
+  font-size: 0.75rem;
+  text-align: center;
+  color: #000;
+}
+.footerFronter__attributionLink {
+  font-weight: bold;
+  color: #3e52a3;
+}
+.footerFronter__attributionLink--name {
+  text-decoration: none;
+  color: #333;
+}
+
+/*# sourceMappingURL=style.css.map */

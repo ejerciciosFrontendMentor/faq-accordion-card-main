@@ -1,0 +1,22 @@
+@use "../config/mixin/mixin";
+.content {
+  @include mixin.size();
+  @include mixin.gridCenter();
+  padding-top: 8.75rem;
+}
+.contentCar {
+  @include mixin.size(20rem, auto);
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  border-radius: 1.25rem;
+  box-shadow: 0px 0.3125rem 0.625rem #000;
+  @media screen and (min-width: 1440px) {
+    @include mixin.size(750px, auto);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    padding: 50px;
+    // overflow: hidden;
+  }
+}

@@ -1,0 +1,25 @@
+@use "../config/mixin/mixin";
+$padding-contentAccordeon:20px;
+.conAccor {
+  @include mixin.size(20rem, auto);
+  &__title {
+    margin-top: 10px;
+    font-size: 2rem;
+    text-align: center;
+    @media screen and (min-width: 1440px) {
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align:left;
+      padding-left:$padding-contentAccordeon;
+    }
+  }
+  &__contentAccordeon {
+    @include mixin.size();
+    padding-left: $padding-contentAccordeon;
+    padding-right: $padding-contentAccordeon;
+    padding-bottom: 40px;
+    @media screen and (min-width: 1440px) {
+    padding-bottom:0;
+    }
+  }
+}

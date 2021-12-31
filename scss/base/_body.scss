@@ -1,0 +1,26 @@
+@use "../config/var/var";
+@use '../config/mixin/mixin';
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+html {
+  @media screen and (min-width: 2560px) {
+    font-size: 28px;
+  }
+}
+body {
+  @include mixin.size();
+  @include mixin.gridPlece;
+  font-size: 16px;
+  margin: 0;
+  padding-bottom:3rem;
+  position: relative;
+  font-family: "Kumbh Sans", sans-serif;
+  background-color:var.$SoftBlue;
+  background-image: linear-gradient(var.$SoftViolet,var.$SoftBlue);
+  background-repeat: no-repeat;
+}
+
+

@@ -1,0 +1,61 @@
+@use "../config/mixin/mixin";
+@use "../config/var/var";
+.accordeon {
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  border-bottom: 0.0625rem solid var.$LightGrayishBlue;
+  position: relative;
+  &::after {
+    @include mixin.afBe();
+    @include mixin.size();
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    
+  }
+  @media (hover:hover){
+    &:hover .accordeon__title{
+      color: var.$ColorSoftRed;
+    }
+  }
+  &__title {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    font-weight: var.$fw-4;
+    &::before {
+      @include mixin.afBe();
+      @include mixin.size(0.9375rem, 0.9375rem);
+      background-image: url(../images/icon-arrow-down.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+    &--show {
+      font-weight: var.$fw-7;
+      &::before {
+        transform: translateY(-50%) rotate(180deg);
+        transition: transform 0.3s;
+      }
+    }
+  }
+  &__cotentText {
+    overflow: hidden;
+    height: 0;
+    transform: translateY(-10%);
+    transition: transform 0.4s, opacity 0.3s;
+    &--show {
+      height: 100%;
+      transform: translateY(0);
+    }
+  }
+  &__text {
+    color: var.$VeryDarkGrayishBlue;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+}
