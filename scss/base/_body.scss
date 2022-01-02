@@ -6,21 +6,28 @@
   box-sizing: border-box;
 }
 html {
-  @media screen and (min-width: 2560px) {
+@media screen and (min-width: 2560px) {
     font-size: 28px;
   }
 }
 body {
-  @include mixin.size();
+  width: 100%;
+  min-height: 100vh;
   @include mixin.gridPlece;
   font-size: 16px;
   margin: 0;
-  padding-bottom:3rem;
   position: relative;
+  padding-top: 7.5rem;
+  padding-bottom:2rem;
   font-family: "Kumbh Sans", sans-serif;
   background-color:var.$SoftBlue;
   background-image: linear-gradient(var.$SoftViolet,var.$SoftBlue);
   background-repeat: no-repeat;
+  @media screen and (min-width:1440px)
+  {
+  padding-top: 0;
+
+  }
 }
 
 
